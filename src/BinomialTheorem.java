@@ -46,6 +46,9 @@ public class BinomialTheorem {
         return nFactorial()/nMinusRFactorial();
     }
 
+    public String binomialExpansion() {
+        for (int i = n-1; i>=0; )
+    }
 
 
 }
