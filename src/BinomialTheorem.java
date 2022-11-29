@@ -1,7 +1,6 @@
 public class BinomialTheorem {
     //Instance Variables
-    private int n, r;
-    private String str;
+    private int r, n;
 
     //Constructors
     public BinomialTheorem(int totalNumberOfObjects, int numberOfObjectsSelected){
@@ -9,8 +8,6 @@ public class BinomialTheorem {
         r = numberOfObjectsSelected;
     }
     public BinomialTheorem(){
-         n = 1;
-         r = 1;
     }
 
     //Methods
@@ -21,7 +18,7 @@ public class BinomialTheorem {
         }
         return ans;
     }
-    public int nFactorial(int n){
+    public static int nFactorial(int n){
         int ans=1;
         for (int nF=n; nF>0; nF--){
             ans*=nF;
@@ -36,7 +33,7 @@ public class BinomialTheorem {
         }
         return ans;
     }
-    public int rFactorial(int r){
+    public static int rFactorial(int r){
         int ans=1;
         for (int rF=r; rF>0; rF--){
             ans*=rF;
@@ -51,7 +48,7 @@ public class BinomialTheorem {
         }
         return ans;
     }
-    public int nMinusRFactorial(int n, int r){
+    public static int nMinusRFactorial(int n, int r){
         int ans=1;
         for (int nrF=(n-r); nrF>0; nrF--){
             ans*=nrF;
@@ -59,17 +56,16 @@ public class BinomialTheorem {
         return ans;
     }
 
-    public int combination(){
-        return permutation()/rFactorial();
-    }
-    public int combination(int n, int r){return permutation(n, r)/rFactorial(r);}
+    public int
+    combination(){
+        return permutation() / rFactorial();}
+    public static int combination(int n, int r){return permutation(n, r)/rFactorial(r);}
 
     public int permutation(){
         return nFactorial()/nMinusRFactorial();
     }
-    public int permutation(int n, int r){return nFactorial(n)/nMinusRFactorial(n,r);}
-
-
+    public static int permutation(int n, int r){
+        return nFactorial(n)/nMinusRFactorial(n,r);}
 
     public String pascalsTriangle() {
         int a = n-1;
@@ -84,6 +80,21 @@ public class BinomialTheorem {
         }
         return returnString.toString();
     }
+    public static String pascalsTriangle(int n) {
+        int a = n-1;
+        StringBuilder returnString = new StringBuilder();
+        for (int i = 0; i<=n; i++ ){
+            returnString.append(" ".repeat(a + 1));
+            for (int e = 0; e <=i;e++){
+                returnString.append(combination(i, e)).append(" ");
+            }
+            a--;
+            returnString.append("\n");
+        }
+        return returnString.toString();
+    }
 
-
+    public String toString(){
+        return "Combination: "+n+"C"+r+" = "+combination()+"\nPermutation: "+n+"P"+r+" = "+permutation();
+    }
 }
