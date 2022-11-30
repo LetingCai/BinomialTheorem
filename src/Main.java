@@ -11,7 +11,7 @@ public class Main {
         try{
             x = Integer.parseInt(str);
         } catch(Exception e){
-            if(str.charAt(1) == 'C' || str.charAt(1) == 'D'){
+            if((str.charAt(1) == 'C' || str.charAt(1) == 'D')){
 
             }
         }
