@@ -3,6 +3,12 @@ public class BinomialTheorem {
     private int r, n;
 
     //Constructors
+    public void changeN(int x){
+        n=x;
+    }
+    public void changeR(int x){
+        r=x;
+    }
     public BinomialTheorem(int totalNumberOfObjects, int numberOfObjectsSelected){
         n = totalNumberOfObjects;
         r = numberOfObjectsSelected;
