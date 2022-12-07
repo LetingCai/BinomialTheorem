@@ -10,7 +10,16 @@ public class Main {
         try{
             x = Integer.parseInt(str);
             if (x==1){
-                System.out.println(BinomialTheorem.pascalsTriangle(10));
+                System.out.println("How many rows? ");
+                System.out.println(BinomialTheorem.pascalsTriangle(scan.nextInt()));
+            } else if(x==2){
+                System.out.println("What is the probability of success?");
+                double p = scan.nextDouble();
+                System.out.println("Number of success?");
+                int n1 = scan.nextInt();
+                System.out.println("Number of failures?");
+                int n2 = scan.nextInt();
+                System.out.println("Probability: "+BinomialTheorem.probability(n1, n2,p));
             }
         } catch(Exception e){
             if(str.charAt(1) == 'C'){

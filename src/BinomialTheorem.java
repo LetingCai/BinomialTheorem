@@ -73,19 +73,6 @@ public class BinomialTheorem {
     public static int permutation(int n, int r){
         return nFactorial(n)/nMinusRFactorial(n,r);}
 
-    public String pascalsTriangle() {
-        int a = n-1;
-        StringBuilder returnString = new StringBuilder();
-        for (int i = 0; i<=n; i++ ){
-            returnString.append(" ".repeat(a + 1));
-            for (int e = 0; e <=i;e++){
-                returnString.append(combination(i, e)).append(" ");
-            }
-            a--;
-            returnString.append("\n");
-        }
-        return returnString.toString();
-    }
     public static String pascalsTriangle(int n) {
         int a = n-1;
         StringBuilder returnString = new StringBuilder();
@@ -98,6 +85,9 @@ public class BinomialTheorem {
             returnString.append("\n");
         }
         return returnString.toString();
+    }
+    public static double probability(int numberOfSuccess, int numberOfFailures, double probabilityOfSuccess){
+        return Math.pow(probabilityOfSuccess,numberOfSuccess)*Math.pow(1-probabilityOfSuccess,numberOfFailures)*combination(numberOfFailures+numberOfSuccess,numberOfSuccess);
     }
 
     public String toString(){
