@@ -62,8 +62,7 @@ public class BinomialTheorem {
         return ans;
     }
 
-    public int
-    combination(){
+    public int combination(){
         return permutation() / rFactorial();}
     public static int combination(int n, int r){return permutation(n, r)/rFactorial(r);}
 
